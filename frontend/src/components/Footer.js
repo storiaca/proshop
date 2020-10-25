@@ -1,16 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import PropTypes from "prop-types";
 
-const Footer = props => {
+const Footer = (props) => {
   return (
-    <div>
-      Facebook
-    </div>
-  )
-}
+    <footer>
+      <Container>
+        <Row>
+          <Col className="text-center py-3">Copyright &copy; ProShop</Col>
+        </Row>
+      </Container>
+    </footer>
+  );
+};
 
-Footer.propTypes = {
+Footer.propTypes = {};
 
-}
-
-export default Footer
+export default Footer;
