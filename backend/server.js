@@ -16,6 +16,10 @@ app.get("/", (req, res) => {
 
 app.use("/api/products", productRoutes);
 
+app.use((err, req, res, next) => {
+  const error = res.statusCode === 200 ? 500 : res.statusCode;
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(
