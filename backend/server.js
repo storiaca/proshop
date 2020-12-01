@@ -16,8 +16,19 @@ app.get("/", (req, res) => {
 
 app.use("/api/products", productRoutes);
 
+app.use((req, res, next) => {
+  const error = new Error(`Not Found - ${req.originalUrl}`);
+  res.status(404);
+  next(error);
+});
+
 app.use((err, req, res, next) => {
-  const error = res.statusCode === 200 ? 500 : res.statusCode;
+  const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+  res.status(statusCode);
+  res.json({
+    message: err.message,
+    stack: process.env.NODE_ENV === "production" ? null : err.stack,
+  });
 });
 
 const PORT = process.env.PORT || 5000;
