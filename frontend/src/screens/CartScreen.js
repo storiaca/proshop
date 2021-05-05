@@ -31,7 +31,13 @@ const CartScreen = ({ match, location, history }) => {
     }
   }, [dispatch, productId, qty]);
 
-  return <div>Cart</div>;
+  return (
+    <Row>
+      <Col md={8}></Col>
+      <Col md={2}></Col>
+      <Col md={2}></Col>
+    </Row>
+  );
 };
 
 export default CartScreen;
