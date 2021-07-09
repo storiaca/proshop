@@ -1,6 +1,5 @@
-const generateToken = () => {
-  console.log(this);
-};
+import jwt from "jsonwebtoken";
 
-export default generateToken;
-// start
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_TOKEN);
+};
