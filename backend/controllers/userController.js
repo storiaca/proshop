@@ -78,4 +78,4 @@ const getUserProfile = asyncHandler(async (req, res) => {
   res.send("Success");
 });
 
-export { authUser, getUserProfile };
+export { authUser, registerUser, getUserProfile };
