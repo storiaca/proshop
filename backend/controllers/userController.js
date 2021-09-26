@@ -78,8 +78,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
   res.send("Success");
 });
 
-export { authUser, registerUser, getUserProfile };
-
 // @desc   Update user profile
 // @route  PUT /api/users/profile
 // @access Private
